@@ -1,0 +1,22 @@
+<p>
+    <!-- ko if: isConnected -->
+    <!-- ko text: fullName --><!-- /ko -->
+    <!-- /ko -->
+    <!-- ko ifnot: isConnected -->
+    user is not connected
+    <!-- /ko -->
+</p>
+<div data-bind="if: countItems">
+    <p>
+        Your cart contains <span data-bind="text: countItems"></span> items
+    </p>
+    details:
+    <ul data-bind="foreach: cartItems">
+        <li>
+            <span data-bind="text: qty"></span> x <span data-bind="text: product_name"></span>
+        </li>
+    </ul>
+</div>
+<div data-bind="ifnot: countItems">
+    <p>Your shopping cart is empty.</p>
+</div>

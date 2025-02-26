@@ -1,0 +1,54 @@
+@import 'component/_faq.less';
+@import 'component/_page-builder.less';
+
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-header {
+        .lib-css(background, @header-top__background);
+        .header.content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .logo {
+            margin: 0 auto 0 0;
+        }
+
+        .login-btn {
+            .lib-css(color, @header-icon__color);
+            .lib-icon-font(
+                @_icon-font-content: @icon-account,
+                @_icon-font-size: 24px,
+                @_icon-font-text-hide: true
+            );
+        }
+
+        .minicart-wrapper {
+            .action.showcart:before {
+                .lib-css(color, @header-icon__color);
+            }
+        }
+    }
+
+    .custom-mini-cart {
+        max-width: @layout__max-width;
+        margin: 0 auto;
+        padding: 20px;
+        border-top: 2px solid white;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}

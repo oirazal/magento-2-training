@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.wrapper.custom-mini-cart" htmlTag="div" htmlClass="custom-mini-cart" after="header-wrapper">
+                <block class="Magento\Framework\View\Element\Template" name="header.custom-mini-cart" template="Magento_Theme::html/custom-mini-cart.phtml" />
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header.panel.wrapper" remove="true" />
+        <referenceBlock name="top.search" remove="true" />
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer.faq" template="Magento_Theme::html/faq.phtml" before="-" />
+            <container name="footer.contactus.wrapper" htmlTag="div" htmlClass="contact-us-wrapper">
+                <block class="Magento\Cms\Block\Block" name="footer.contactus">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-contact-us</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_width" xsi:type="number">100</argument>
+                <argument name="logo_height" xsi:type="number">66</argument>
+            </arguments>
+        </referenceBlock>
+        <move element="authorization-link-login" destination="header-wrapper" before="minicart" />
+    </body>
+</page>

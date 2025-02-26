@@ -1,0 +1,18 @@
+<div id="custom-MC" data-bind="scope: 'mini-cart-scope'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#custom-MC": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "mini-cart-scope": {
+                    "template": "Magento_Theme/content",
+                    "component": "mini-cart"
+                }
+            }
+        }
+    }
+}
+</script>

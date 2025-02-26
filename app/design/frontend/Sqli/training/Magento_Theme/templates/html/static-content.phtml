@@ -1,0 +1,19 @@
+<div id="static-block" data-bind="scope: 'dynamicText'">
+    <span data-bind="text: content"></span>
+    <button class="btn-custom" data-bind="click: clear">Clear</button>
+    <input type="text" data-bind="textInput: content" />
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#static-block": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "dynamicText": {
+                    "component": "customScript"
+                }
+            }
+        }
+    }
+}
+</script>

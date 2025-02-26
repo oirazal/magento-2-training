@@ -1,0 +1,58 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .faq {
+        &_wrapper {
+            margin-bottom: 50px;
+        }
+
+        &_section_title {
+            font-size: 2rem;
+        }
+
+        &_title {
+            .lib-icon-font(
+                @_icon-font-content: @icon-down,
+                @_icon-font-size: 30px,
+                @_icon-font-position: after
+            );
+            .lib-css(background, white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &.open:after {
+                .lib-css(transform, rotate(180deg))
+            }
+
+            &:not(:first-child) {
+                margin-top: 20px;
+            }
+        }
+
+        &_content {
+            .lib-css(background, white);
+            padding: 20px 10px;
+            display: none;
+
+            &.open {
+                display: block;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
